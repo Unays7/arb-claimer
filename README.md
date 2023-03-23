@@ -25,6 +25,8 @@ You need to fill in the config. I strongly recommend not using arb1.arbitrum.io 
 
 The tokens will be sent to `main_address`. Please ensure triple check this address is correct, or you will get NO TOKENS. 
 
+Save the config file so the config file updates
+
 ```
 {
     "privatekeys": [
