@@ -27,11 +27,11 @@ private_keys = config['privatekeys']
 w3 = Web3(Web3.HTTPProvider(rpc_url))
 
 # Claim contract address
-contract_address = w3.toChecksumAddress("0x67a24CE4321aB3aF51c2D0a4801c3E111D88C9d9")
-arb_address = w3.toChecksumAddress("0x912CE59144191C1204E64559FE8253a0e49E6548")
-multicall_address = w3.toChecksumAddress("0xcA11bde05977b3631167028862bE2a173976CA11")
+contract_address = w3.to_checksum_address("0x67a24CE4321aB3aF51c2D0a4801c3E111D88C9d9")
+arb_address = w3.to_checksum_address("0x912CE59144191C1204E64559FE8253a0e49E6548")
+multicall_address = w3.to_checksum_address("0xcA11bde05977b3631167028862bE2a173976CA11")
 
-main_address = w3.toChecksumAddress(config['main_address'])
+main_address = w3.to_checksum_address(config['main_address'])
 
 # Ensure connected to Ethereum node
 if not w3.isConnected():
@@ -39,9 +39,9 @@ if not w3.isConnected():
     exit(1)
 
 # Instantiate contract
-contract = w3.eth.contract(address=w3.toChecksumAddress(contract_address), abi=contract_abi)
-arb_token = w3.eth.contract(address=w3.toChecksumAddress(arb_address), abi=arb_token_abi)
-multicall = w3.eth.contract(address=w3.toChecksumAddress(multicall_address), abi=multicall_abi)
+contract = w3.eth.contract(address=w3.to_checksum_address(contract_address), abi=contract_abi)
+arb_token = w3.eth.contract(address=w3.to_checksum_address(arb_address), abi=arb_token_abi)
+multicall = w3.eth.contract(address=w3.to_checksum_address(multicall_address), abi=multicall_abi)
 
 while True:
     # get current block number
